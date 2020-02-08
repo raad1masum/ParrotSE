@@ -7,7 +7,7 @@ from ursina.prefabs.first_person_controller import FirstPersonController
 
 app = Ursina()
 
-e = Entity(model=Terrain('loddefjord_height_map', skip=8), texture='explosion', scale=500, scale_y=500)
+e = Entity(model=Terrain('height_map', skip=8), texture='explosion', scale=500, scale_y=500)
 Sky(rotation_y=125)
 
 help_text = Text(text='Controls:\n\nw: Forward\ns: Back\na: Left\nd: Right\ne: Up\nq: Down', origin=(-.5,.5), position=window.top_left*.95, color=color.black)
