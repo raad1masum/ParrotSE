@@ -7,7 +7,7 @@ from ursina.prefabs.first_person_controller import FirstPersonController
 
 app = Ursina()
 
-f = open('score.txt','r')
+f = open('scoreTMP.txt','r')
 
 e = Entity(model=Terrain('height_map', skip=8), texture='explosion', scale=600, scale_y=600)
 Sky(rotation_y=125)
