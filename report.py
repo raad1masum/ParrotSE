@@ -12,8 +12,8 @@ f = open('scoreTMP.txt','r')
 e = Entity(
 	model=Terrain('height_map', skip=8), 
 	texture='explosion', 
-	scale=600, 
-	scale_y=600)
+	scale=2000, 
+	scale_y=2000)
 
 Sky(rotation_y=125)
 
