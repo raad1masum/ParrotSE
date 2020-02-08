@@ -12,7 +12,7 @@ f = open('score.txt','r')
 e = Entity(model=Terrain('height_map', skip=8), texture='explosion', scale=500, scale_y=500)
 Sky(rotation_y=125)
 
-Entity(model='cube', texture='white_cube', color=color.blue, highlight_color=color.lime, scale=100, scale_y=100)
+b = Entity(model='cube', texture='white_cube', color=color.blue, highlight_color=color.lime, scale=100, scale_y=100,text='Score',)
 
 score = f.read()
 
@@ -23,16 +23,16 @@ scene.fog_density = .005
 
 fpc = FirstPersonController(speed=80)
 
-window.exit_button.visible = True
-window.fps_counter.enabled = True
-mouse.visible = False
+# window.exit_button.visible = True
+# window.fps_counter.enabled = True
+# mouse.visible = False
 
-camera.shader = camera_vertical_blur_shader
-camera.set_shader_input('blur_size', .0)
+# camera.shader = camera_vertical_blur_shader
+# camera.set_shader_input('blur_size', .0)
 
-camera.blur_amount = 0
-def update():
-    camera.set_shader_input("blur_size", camera.blur_amount)
+# camera.blur_amount = 0
+# def update():
+#     camera.set_shader_input("blur_size", camera.blur_amount)
 
 t = Text('ParrotSE', enabled=False, scale=3, origin=(0,-5.5), color=color.dark_text)
 by = Text('Concieved and Developed by: Raadwan Masum', enabled=False, scale=1, origin=(0,-13.6), color=color.dark_text)
