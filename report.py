@@ -9,12 +9,31 @@ app = Ursina()
 
 f = open('scoreTMP.txt','r')
 
-e = Entity(model=Terrain('height_map', skip=8), texture='explosion', scale=600, scale_y=600)
+e = Entity(
+	model=Terrain('height_map', skip=8), 
+	texture='explosion', 
+	scale=600, 
+	scale_y=600)
+
 Sky(rotation_y=125)
 
-b = Entity(model='cube', texture='white_cube', color=color.blue, highlight_color=color.lime, scale=100, scale_y=100,text='Score',)
+b = Entity(
+	model='cube_uv_top', 
+	texture='white_cube', 
+	color=color.blue, 
+	highlight_color=color.lime, 
+	scale=100, 
+	scale_y=100,
+	text='Score',)
 
-r = Entity(model=Plane(subdivisions=(3,6)), texture='shore', color=color.blue, scale=100, scale_y=100, position=(0, 50.2), rotation_y=180)
+r = Entity(
+	model=Plane(subdivisions=(3,6)), 
+	texture='shore', 
+	color=color.blue, 
+	scale=100, 
+	scale_y=100, 
+	position=(0, 50.2), 
+	rotation_y=180)
 
 score = f.read()
 
