@@ -26,10 +26,15 @@ camera.blur_amount = 0
 def update():
     camera.set_shader_input("blur_size", camera.blur_amount)
 
-t = Text('ParrotSE', enabled=False, scale=3, origin=(0,0), color=color.dark_text)
+t = Text('ParrotSE', enabled=False, scale=3, origin=(0,-5), color=color.dark_text)
 
-camera.animate('blur_amount', .6, duration=4)
-invoke(t.appear, speed=.1, delay=4.2)
+invoke(t.appear, speed=.1, delay=3)
+
+print('hello')
+
+def input(key):
+	if key == 'esc':
+		app.quit()
 
 # def input(key):
 #     if key == 'enter':
