@@ -34,9 +34,11 @@ camera.blur_amount = 0
 def update():
     camera.set_shader_input("blur_size", camera.blur_amount)
 
-t = Text('ParrotSE', enabled=False, scale=3, origin=(0,-5), color=color.dark_text)
+t = Text('ParrotSE', enabled=False, scale=3, origin=(0,-5.5), color=color.dark_text)
+by = Text('Concieved and Developed by: Raadwan Masum', enabled=False, scale=1, origin=(0,-13.6), color=color.dark_text)
 
-invoke(t.appear, speed=.1, delay=3)
+invoke(t.appear, speed=.23, delay=4)
+invoke(by.appear, speed=.06, delay=6)
 
 print('hello')
 
