@@ -16,24 +16,24 @@ e = Entity(
 
 Sky(rotation_y=125)
 
-b = Entity(
+c = Entity(
 	model='cube_uv_top', 
 	texture='white_cube', 
 	color=color.blue, 
 	highlight_color=color.violet, 
-	scale=100, 
-	scale_y=100,
+	scale=200, 
+	scale_y=200,
 	text='Score',)
 
 r = Entity(
 	model=Plane(subdivisions=(3,6)), 
-	texture='shore', 
-	color=color.blue, 
-	scale=100, 
-	scale_y=100, 
-	position=(0, 50.2), 
+	texture='parrot_3',
+	scale=200, 
+	scale_y=200, 
+	position=(0, 100.2), 
 	rotation_y=180,
 	text='Score')
+
 
 help_text = Text(text=f'Controls:\n\nw: Forward\ns: Back\na: Left\nd: Right\ne: Up\nq: Down\nEXIT: Shift+Q\nScore: {score}', 
 	origin=(-.5,.5), 
