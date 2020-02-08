@@ -10,6 +10,8 @@ app = Ursina()
 e = Entity(model=Terrain('loddefjord_height_map', skip=8), texture='explosion', scale=500, scale_y=500)
 Sky(rotation_y=125)
 
+help_text = Text(text='Controls:\n\nw: Forward\ns: Back\na: Left\nd: Right\ne: Up\nq: Down', origin=(-.5,.5), position=window.top_left*.95, color=color.black)
+
 scene.fog_color = color.gray
 scene.fog_density = .01
 
@@ -31,14 +33,5 @@ t = Text('ParrotSE', enabled=False, scale=3, origin=(0,-5), color=color.dark_tex
 invoke(t.appear, speed=.1, delay=3)
 
 print('hello')
-
-def input(key):
-	if key == 'esc':
-		app.quit()
-
-# def input(key):
-#     if key == 'enter':
-#         camera.animate('blur_amount', .6, duration=4)
-#         invoke(t.appear, speed=.1, delay=4.2)
 
 app.run()
