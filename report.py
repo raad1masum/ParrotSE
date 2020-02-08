@@ -35,7 +35,8 @@ r = Entity(
 	text='Score')
 
 
-help_text = Text(text=f'Controls:\n\nw: Forward\ns: Back\na: Left\nd: Right\ne: Up\nq: Down\nEXIT: Shift+Q\nScore: {score}', 
+help_text = Text(
+	text=f'Controls:\n\nw: Forward\ns: Back\na: Left\nd: Right\ne: Up\nq: Down\nEXIT: Shift+Q\nScore: {score}', 
 	origin=(-.5,.5), 
 	position=window.top_left*.95, 
 	color=color.black)
