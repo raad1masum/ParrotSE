@@ -72,6 +72,4 @@ invoke(by.appear,
 	speed=.06, 
 	delay=6)
 
-print('hello')
-
 app.run()
