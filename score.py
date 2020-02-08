@@ -3,7 +3,7 @@ import random
 
 points = random.randint(1,101)
 
-f = open("score.txt", "w")
+f = open("scoreTMP.txt", "w")
 
 def scoring():
 	for x in range(100):
