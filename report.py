@@ -37,29 +37,40 @@ r = Entity(
 
 score = f.read()
 
-help_text = Text(text=f'Controls:\n\nw: Forward\ns: Back\na: Left\nd: Right\ne: Up\nq: Down\nScore: {score}', origin=(-.5,.5), position=window.top_left*.95, color=color.black)
+help_text = Text(text=f'Controls:\n\nw: Forward\ns: Back\na: Left\nd: Right\ne: Up\nq: Down\nScore: {score}', 
+	origin=(-.5,.5), 
+	position=window.top_left*.95, 
+	color=color.black)
 
 scene.fog_color = color.light_gray
 scene.fog_density = .003
 
 fpc = FirstPersonController(speed=80)
 
-# window.exit_button.visible = True
-# window.fps_counter.enabled = True
-# mouse.visible = False
+window.exit_button.visible = True
+window.fps_counter.enabled = True
+mouse.visible = False
 
-# camera.shader = camera_vertical_blur_shader
-# camera.set_shader_input('blur_size', .0)
+t = Text(
+	'ParrotSE', 
+	enabled=False, 
+	scale=3, 
+	origin=(0,-5.5), 
+	color=color.dark_text)
 
-# camera.blur_amount = 0
-# def update():
-#     camera.set_shader_input("blur_size", camera.blur_amount)
+by = Text(
+	'Concieved and Developed by: Raadwan Masum', 
+	enabled=False, 
+	scale=1, 
+	origin=(0,-13.6), 
+	color=color.dark_text)
 
-t = Text('ParrotSE', enabled=False, scale=3, origin=(0,-5.5), color=color.dark_text)
-by = Text('Concieved and Developed by: Raadwan Masum', enabled=False, scale=1, origin=(0,-13.6), color=color.dark_text)
-
-invoke(t.appear, speed=.23, delay=4)
-invoke(by.appear, speed=.06, delay=6)
+invoke(t.appear, 
+	speed=.23, 
+	delay=4)
+invoke(by.appear, 
+	speed=.06, 
+	delay=6)
 
 print('hello')
 
