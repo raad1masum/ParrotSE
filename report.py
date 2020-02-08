@@ -9,7 +9,7 @@ app = Ursina()
 
 f = open('score.txt','r')
 
-e = Entity(model=Terrain('height_map', skip=8), texture='explosion', scale=500, scale_y=500)
+e = Entity(model=Terrain('height_map', skip=8), texture='explosion', scale=600, scale_y=600)
 Sky(rotation_y=125)
 
 b = Entity(model='cube', texture='white_cube', color=color.blue, highlight_color=color.lime, scale=100, scale_y=100,text='Score',)
