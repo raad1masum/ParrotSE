@@ -18,7 +18,7 @@ score = f.read()
 
 help_text = Text(text=f'Controls:\n\nw: Forward\ns: Back\na: Left\nd: Right\ne: Up\nq: Down\nScore: {score}', origin=(-.5,.5), position=window.top_left*.95, color=color.black)
 
-scene.fog_color = color.gray
+scene.fog_color = color.light_gray
 scene.fog_density = .005
 
 fpc = FirstPersonController(speed=50)
