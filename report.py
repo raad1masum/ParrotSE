@@ -12,7 +12,7 @@ f = open('score.txt','r')
 e = Entity(model=Terrain('height_map', skip=8), texture='explosion', scale=500, scale_y=500)
 Sky(rotation_y=125)
 
-Entity(model = 'cube', texture = 'white_cube', color = color.blue, highlight_color = color.lime, scale=100, scale_y=100)
+Entity(model='cube', texture='white_cube', color=color.blue, highlight_color=color.lime, scale=100, scale_y=100)
 
 score = f.read()
 
@@ -21,7 +21,7 @@ help_text = Text(text=f'Controls:\n\nw: Forward\ns: Back\na: Left\nd: Right\ne: 
 scene.fog_color = color.light_gray
 scene.fog_density = .005
 
-fpc = FirstPersonController(speed=50)
+fpc = FirstPersonController(speed=80)
 
 window.exit_button.visible = True
 window.fps_counter.enabled = True
