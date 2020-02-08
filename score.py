@@ -1,9 +1,17 @@
 import time
+import random
 
-n = 0
-time.sleep(3)
-n = 4
-time.sleep(3)
-n = 5
-time.sleep(3)
-n = 6
+points = random.randint(1,101)
+
+f = open("score.txt", "w")
+
+def scoring():
+	for x in range(100):
+	  time.sleep(2)
+	  points = random.randint(1,101)
+	return points
+
+f.write(str(points))
+f.close()
+
+exec(open("report.py").read())
