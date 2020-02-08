@@ -9,6 +9,8 @@ app = Ursina()
 
 f = open('scoreTMP.txt','r')
 
+score = f.read()
+
 e = Entity(
 	model=Terrain('height_map', skip=8), 
 	texture='explosion', 
@@ -34,8 +36,6 @@ r = Entity(
 	scale_y=100, 
 	position=(0, 50.2), 
 	rotation_y=180)
-
-score = f.read()
 
 help_text = Text(text=f'Controls:\n\nw: Forward\ns: Back\na: Left\nd: Right\ne: Up\nq: Down\nScore: {score}', 
 	origin=(-.5,.5), 
