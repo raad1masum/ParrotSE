@@ -10,7 +10,7 @@ app = Ursina()
 e = Entity(model=Terrain('height_map', skip=8), texture='explosion', scale=500, scale_y=500)
 Sky(rotation_y=125)
 
-help_text = Text(text='Controls:\n\nw: Forward\ns: Back\na: Left\nd: Right\ne: Up\nq: Down', origin=(-.5,.5), position=window.top_left*.95, color=color.black)
+help_text = Text(text='Controls:\n\nw: Forward\ns: Back\na: Left\nd: Right\ne: Up\nq: Down\n', origin=(-.5,.5), position=window.top_left*.95, color=color.black)
 
 scene.fog_color = color.gray
 scene.fog_density = .01
