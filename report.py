@@ -14,6 +14,8 @@ Sky(rotation_y=125)
 
 b = Entity(model='cube', texture='white_cube', color=color.blue, highlight_color=color.lime, scale=100, scale_y=100,text='Score',)
 
+r = Entity(model=Plane(subdivisions=(3,6)), texture='shore', color=color.blue, scale=100, scale_y=100, position=(0, 50.2), rotation_y=180)
+
 score = f.read()
 
 help_text = Text(text=f'Controls:\n\nw: Forward\ns: Back\na: Left\nd: Right\ne: Up\nq: Down\nScore: {score}', origin=(-.5,.5), position=window.top_left*.95, color=color.black)
