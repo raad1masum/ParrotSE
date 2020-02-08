@@ -1,6 +1,3 @@
-import os
-import time
-
 from ursina import *
 from ursina .shaders import camera_vertical_blur_shader
 from ursina.prefabs.first_person_controller import FirstPersonController
