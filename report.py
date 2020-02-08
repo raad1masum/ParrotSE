@@ -1,6 +1,8 @@
 from ursina import *
 from ursina .shaders import camera_vertical_blur_shader
 from ursina.prefabs.first_person_controller import FirstPersonController
+from ursina.prefabs.dropdown_menu import DropdownMenuButton
+from ursina.prefabs.dropdown_menu import DropdownMenu
 
 app = Ursina()
 
@@ -34,9 +36,16 @@ r = Entity(
 	rotation_y=180,
 	text='Score')
 
+def input(key):
+	if key == 'p':
+		b = Button(
+			text='hello world!', 
+			color=color.blue,
+			texture='shore', 
+			origin=(0,0))
 
 help_text = Text(
-	text=f'Controls:\n\nw: Forward\ns: Back\na: Left\nd: Right\ne: Up\nq: Down\nEXIT: Shift+Q\nScore: {score}', 
+	text=f'Controls:\n\nw: Forward\ns: Back\na: Left\nd: Right\ne: Up\nq: Down\nScore Report: p\nEXIT: Shift+Q\nScore: {score}', 
 	origin=(-.5,.5), 
 	position=window.top_left*.95, 
 	color=color.black)
@@ -58,7 +67,7 @@ t = Text(
 	color=color.dark_text)
 
 by = Text(
-	'Concieved and Developed by: Raadwan Masum', 
+	'Conceived and Developed by: Raadwan Masum', 
 	enabled=False, 
 	scale=1, 
 	origin=(0,-13.6), 
