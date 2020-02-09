@@ -47,7 +47,7 @@ def input(key):
 			origin=(0,0))
 
 help_text = Text(
-	text=f'Controls:\n\nw: Forward\ns: Back\na: Left\nd: Right\ne: Up\nq: Down\nScore Report: p\nEXIT: Shift+Q\nScore: {score}', 
+	text='Controls:\n\nw: Forward\ns: Back\na: Left\nd: Right\ne: Up\nq: Down\nScore Report: p\nEXIT: Shift+Q\nScore: ' +score, 
 	origin=(-.5,.5), 
 	position=window.top_left*.95, 
 	color=color.black)
