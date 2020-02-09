@@ -20,6 +20,7 @@ def userAdded(user):
 		points.append(f'Create user account {user}')
 		return True
 	else:
+		return False
 
 def userRemoved(user):
 	global score
@@ -29,7 +30,10 @@ def userRemoved(user):
 			person = 1
 	if person == 0:
 		score = score+1
-		points.append(f'Removed unauthorized user {user}')
+		points.append(f'Removed unauthorized user {user}')\
+		return True
+	else:
+		return False
 
 def groupAdded(group):
 	global score
@@ -40,6 +44,9 @@ def groupAdded(group):
 	if person == 1:
 		score = score+1
 		points.append(f'Added The Group {group}')
+		return True
+	else:
+		return False
 
 def groupRemoved(group):
 	global score
@@ -50,6 +57,9 @@ def groupRemoved(group):
 	if person == 0:
 		score = score+1
 		points.append(f'Removed The Group {group}')
+		return True
+	else:
+		return False
 
 def groupAddedTo(user, group):
 	global score
@@ -59,6 +69,9 @@ def groupAddedTo(user, group):
 	if user in d:
 		score = score+1
 		points.append(f'Added {user} To The {group} Group')
+		return True
+	else:
+		return False
 
 def groupRemovedFrom(user, group):
 	global score
@@ -68,6 +81,9 @@ def groupRemovedFrom(user, group):
 	if user not in d:
 		score = score+1
 		points.append(f'Removed {user} From The {group} Group')
+		return True
+	else:
+		return False
 
 def updates(topic,repo):
 	global score
@@ -78,6 +94,9 @@ def updates(topic,repo):
 	if repo in d:
 		score = score+1
 		points.append("Install updates from important security updates")
+		return True
+	else:
+		return False
 
 def firewallCheck():
 	global score
@@ -88,12 +107,18 @@ def firewallCheck():
 	if ' active' in d:
 		score = score+1
 		points.append('Enabled The Firewall')
+		return True
+	else:
+		return False
 
 def malwareCheck(file_path):
 	global score
 	if not os.path.isfile(file_path):
 		score = score+1
 		points.append('Removed Harmful File')
+		return True
+	else:
+		return False
 
 def packageInstalled(package):
 	p = subprocess.Popen(f"dpkg -l | grep {package}", shell=True, stdout=subprocess.PIPE)
