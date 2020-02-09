@@ -98,13 +98,13 @@ def disableGuestAccount(file_path):
     else:
     	return False
 
-def updates(topic,repo):
+def updates():
 	global score
 	p = subprocess.Popen("cat /etc/apt/sources.list", shell=True, stdout=subprocess.PIPE)
 	d = p.stdout.read()
 	p.stdout.close()
 	p.wait()
-	if repo in d:
+	if "http://us.archive.ubuntu.com/ubuntu" and "http://security.ubuntu.com/ubuntu" in d:
 		score = score+1
 		points.append("Install updates from important security updates")
 		return True
