@@ -28,6 +28,16 @@ def updates(topic,repo):
       score = score+1
       points.append(topic+" Repository Added To Debian Package Lists")
 
+def firewallCheck():
+   global score
+   p = subprocess.Popen("ufw status", shell=True, stdout=subprocess.PIPE)
+   d = p.stdout.read()
+   p.stdout.close()
+   p.wait()
+   if ' active' in d:
+      score = score+1
+      points.append('Enabled The Firewall')
+
 def packageInstalled(package):
    p = subprocess.Popen("dpkg -l | grep " +package, shell=True, stdout=subprocess.PIPE)
    d = p.stdout.read()
