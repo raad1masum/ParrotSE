@@ -8,9 +8,18 @@ import sys
 score = 0
 points = []
 
+def updates(topic,respository):
+   global score
+   p = subprocess.Popen("cat /etc/apt/sources.list", shell=True, stdout=subprocess.PIPE)
+   d = p.stdout.read()
+   p.stdout.close()
+   p.wait()
+   if respository in d:
+      score = score+1
+      points.append(topic+" Respository Added To Debian Package Lists")
 
-def programInstalled(program):
-   p = subprocess.Popen("dpkg -l | grep " +program, shell=True, stdout=subprocess.PIPE)
+def packageInstalled(package):
+   p = subprocess.Popen("dpkg -l | grep " +package, shell=True, stdout=subprocess.PIPE)
    d = p.stdout.read()
    p.stdout.close()
    p.wait()
@@ -19,8 +28,8 @@ def programInstalled(program):
    else:
        return False
 
-def programRemoved(program):
-   p = subprocess.Popen("dpkg -l | grep " +program, shell=True, stdout=subprocess.PIPE)
+def packageRemoved(package):
+   p = subprocess.Popen("dpkg -l | grep " +package, shell=True, stdout=subprocess.PIPE)
    d = p.stdout.read()
    p.stdout.close()
    p.wait()
