@@ -96,6 +96,12 @@ def packageInstalled(package):
    else:
        return False
 
+def malwareCheck(file_path):
+   global score
+   if not os.path.isfile(file_path):
+      score = score+1
+      points.append('Removed Harmful File')
+
 def packageRemoved(package):
    p = subprocess.Popen("dpkg -l | grep " +package, shell=True, stdout=subprocess.PIPE)
    d = p.stdout.read()
@@ -105,9 +111,3 @@ def packageRemoved(package):
        return True
    else:
        return False
-
-def malwareCheck(file_path):
-   global score
-   if not os.path.isfile(file_path):
-      score = score+1
-      points.append('Removed Harmful File')
