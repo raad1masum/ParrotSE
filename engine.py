@@ -30,21 +30,41 @@ def userRemoved(user):
 
 def groupAdded(group):
    global score
-   p = subprocess.Popen("cat /etc/group | grep sudo", shell=True, stdout=subprocess.PIPE)
-   d = p.stdout.read()
-   p.wait()
-   if group in d:
-      score = score+1
-      points.append('Added '+group+' To The Sudo Group')
+   person = 0
+   for line in open('/etc/group'):
+       if group in line:
+           person = 1
+   if person == 1:
+       score = score+1
+       points.append('Added The Group '+group)
 
 def groupRemoved(group):
    global score
-   p = subprocess.Popen("cat /etc/group | grep sudo", shell=True, stdout=subprocess.PIPE)
+   person = 0
+   for line in open('/etc/group'):
+       if group in line:
+           person = 1
+   if person == 0:
+       score = score+1
+       points.append('Removed The Group '+group)
+
+def groupAddedTo(user, group):
+   global score
+   p = subprocess.Popen(f"cat /etc/group | grep {group}", shell=True, stdout=subprocess.PIPE)
    d = p.stdout.read()
    p.wait()
-   if group not in d:
+   if user in d:
       score = score+1
-      points.append('Added '+group+' To The Sudo Group')
+      points.append(f'Added {user} To The {group} Group')
+
+def groupRemovedFrom(user, group):
+   global score
+   p = subprocess.Popen(f"cat /etc/group | grep {group}", shell=True, stdout=subprocess.PIPE)
+   d = p.stdout.read()
+   p.wait()
+   if user not in d:
+      score = score+1
+      points.append(f'Removed {user} From The {group} Group')
 
 def updates(topic,repo):
    global score
