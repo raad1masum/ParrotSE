@@ -82,7 +82,7 @@ def groupRemovedFrom(user, group):
 	p.wait()
 	if user not in d:
 		score = score+1
-		points.append('Removed ' _+user+ ' From The ' +group+ ' Group')
+		points.append('Removed ' +user+ ' From The ' +group+ ' Group')
 		return True
 	else:
 		return False
