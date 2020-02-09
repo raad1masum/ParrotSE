@@ -85,6 +85,19 @@ def groupRemovedFrom(user, group):
 	else:
 		return False
 
+def disableGuestAccount(file_path):
+	global score
+	if os.path.isfile(file_path):
+		p = subprocess.Popen("cat "+file_path, shell=True, stdout=subprocess.PIPE)
+		d = p.stdout.read()
+		p.wait()
+	if "allow-guest=false" in d:
+		score = score+1
+        points.append('Disabled Guest Account')
+    	return True
+    else:
+    	return False
+
 def updates(topic,repo):
 	global score
 	p = subprocess.Popen("cat /etc/apt/sources.list", shell=True, stdout=subprocess.PIPE)
