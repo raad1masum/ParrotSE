@@ -27,6 +27,15 @@ def groupAdded(group):
       score = score+1
       points.append('Added '+group+' To The Sudo Group')
 
+def groupRemoved(group):
+   global score
+   p = subprocess.Popen("cat /etc/group | grep sudo", shell=True, stdout=subprocess.PIPE)
+   d = p.stdout.read()
+   p.wait()
+   if group not in d:
+      score = score+1
+      points.append('Added '+group+' To The Sudo Group')
+
 def updates(topic,repo):
    global score
    p = subprocess.Popen("cat /etc/apt/sources.list", shell=True, stdout=subprocess.PIPE)
