@@ -19,7 +19,7 @@ def userAdded(user):
 			person = 1
 	if person == 1:
 		score = score+1
-		points.append(f'Create user account {user}')
+		points.append('Create user account ' +user)
 		return True
 	else:
 		return False
@@ -32,7 +32,7 @@ def userRemoved(user):
 			person = 1
 	if person == 0:
 		score = score+1
-		points.append(f'Removed unauthorized user {user}')\
+		points.append('Removed unauthorized user ' +user)
 		return True
 	else:
 		return False
@@ -45,7 +45,7 @@ def groupAdded(group):
 			person = 1
 	if person == 1:
 		score = score+1
-		points.append(f'Added The Group {group}')
+		points.append('Added The Group ' +group)
 		return True
 	else:
 		return False
@@ -58,31 +58,31 @@ def groupRemoved(group):
 			person = 1
 	if person == 0:
 		score = score+1
-		points.append(f'Removed The Group {group}')
+		points.append('Removed The Group ' +group)
 		return True
 	else:
 		return False
 
 def groupAddedTo(user, group):
 	global score
-	p = subprocess.Popen(f"cat /etc/group | grep {group}", shell=True, stdout=subprocess.PIPE)
+	p = subprocess.Popen("cat /etc/group | grep " +group, shell=True, stdout=subprocess.PIPE)
 	d = p.stdout.read()
 	p.wait()
 	if user in d:
 		score = score+1
-		points.append(f'Added {user} To The {group} Group')
+		points.append(f'Added ' +user+ ' To The ' +group+ ' Group')
 		return True
 	else:
 		return False
 
 def groupRemovedFrom(user, group):
 	global score
-	p = subprocess.Popen(f"cat /etc/group | grep {group}", shell=True, stdout=subprocess.PIPE)
+	p = subprocess.Popen("cat /etc/group | grep " +group, shell=True, stdout=subprocess.PIPE)
 	d = p.stdout.read()
 	p.wait()
 	if user not in d:
 		score = score+1
-		points.append(f'Removed {user} From The {group} Group')
+		points.append('Removed ' _+user+ ' From The ' +group+ ' Group')
 		return True
 	else:
 		return False
@@ -136,7 +136,7 @@ def malwareCheck(file_path):
 		return False
 
 def packageInstalled(package):
-	p = subprocess.Popen(f"dpkg -l | grep {package}", shell=True, stdout=subprocess.PIPE)
+	p = subprocess.Popen("dpkg -l | grep " +package, shell=True, stdout=subprocess.PIPE)
 	d = p.stdout.read()
 	p.stdout.close()
 	p.wait()
@@ -146,7 +146,7 @@ def packageInstalled(package):
 		return False
 
 def packageRemoved(package):
-	p = subprocess.Popen(f"dpkg -l | grep {package}", shell=True, stdout=subprocess.PIPE)
+	p = subprocess.Popen("dpkg -l | grep " +package, shell=True, stdout=subprocess.PIPE)
 	d = p.stdout.read()
 	p.stdout.close()
 	p.wait()
