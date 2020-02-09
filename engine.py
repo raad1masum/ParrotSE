@@ -8,15 +8,15 @@ import sys
 score = 0
 points = []
 
-def updates(topic,respository):
+def updates(topic,repo):
    global score
    p = subprocess.Popen("cat /etc/apt/sources.list", shell=True, stdout=subprocess.PIPE)
    d = p.stdout.read()
    p.stdout.close()
    p.wait()
-   if respository in d:
+   if repo in d:
       score = score+1
-      points.append(topic+" Respository Added To Debian Package Lists")
+      points.append(topic+" Repository Added To Debian Package Lists")
 
 def packageInstalled(package):
    p = subprocess.Popen("dpkg -l | grep " +package, shell=True, stdout=subprocess.PIPE)
