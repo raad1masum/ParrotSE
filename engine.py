@@ -16,7 +16,7 @@ def userAdded(user):
            person = 1
    if person == 1:
        score = score+1
-       points.append('Added The User '+user)
+       points.append(f'Create user account {user}')
 
 def userRemoved(user):
    global score
@@ -26,7 +26,7 @@ def userRemoved(user):
            person = 1
    if person == 0:
        score = score+1
-       points.append('Removed The User '+user)
+       points.append(f'Removed unauthorized user {user}')
 
 def groupAdded(group):
    global score
@@ -36,7 +36,7 @@ def groupAdded(group):
            person = 1
    if person == 1:
        score = score+1
-       points.append('Added The Group '+group)
+       points.append(f'Added The Group {group}')
 
 def groupRemoved(group):
    global score
@@ -46,7 +46,7 @@ def groupRemoved(group):
            person = 1
    if person == 0:
        score = score+1
-       points.append('Removed The Group '+group)
+       points.append(f'Removed The Group {group}')
 
 def groupAddedTo(user, group):
    global score
@@ -74,7 +74,7 @@ def updates(topic,repo):
    p.wait()
    if repo in d:
       score = score+1
-      points.append(topic+" Repository Added To Debian Package Lists")
+      points.append("Install updates from important security updates")
 
 def firewallCheck():
    global score
@@ -93,7 +93,7 @@ def malwareCheck(file_path):
       points.append('Removed Harmful File')
 
 def packageInstalled(package):
-   p = subprocess.Popen("dpkg -l | grep " +package, shell=True, stdout=subprocess.PIPE)
+   p = subprocess.Popen(f"dpkg -l | grep {package}", shell=True, stdout=subprocess.PIPE)
    d = p.stdout.read()
    p.stdout.close()
    p.wait()
@@ -103,7 +103,7 @@ def packageInstalled(package):
        return False
 
 def packageRemoved(package):
-   p = subprocess.Popen("dpkg -l | grep " +package, shell=True, stdout=subprocess.PIPE)
+   p = subprocess.Popen(f"dpkg -l | grep {package}", shell=True, stdout=subprocess.PIPE)
    d = p.stdout.read()
    p.stdout.close()
    p.wait()
