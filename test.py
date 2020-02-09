@@ -1,12 +1,4 @@
-asdfsdf
-asdfa
-sdf
-as
-dfa
-sd
-fas
-df
-if 
+
 and 
 or
 not
