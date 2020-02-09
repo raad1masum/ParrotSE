@@ -70,7 +70,7 @@ def groupAddedTo(user, group):
 	p.wait()
 	if user in d:
 		score = score+1
-		points.append(f'Added ' +user+ ' To The ' +group+ ' Group')
+		points.append('Added ' +user+ ' To The ' +group+ ' Group')
 		return True
 	else:
 		return False
