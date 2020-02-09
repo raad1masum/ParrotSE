@@ -8,7 +8,17 @@ import sys
 score = 0
 points = []
 
-def userCheck(user):
+def userAdded(user):
+   global score
+   person = 0
+   for line in open('/etc/passwd'):
+       if user in line:
+           person = 1
+   if person == 1:
+       score = score+1
+       points.append('Added The User '+user)
+
+def userRemoved(user):
    global score
    person = 0
    for line in open('/etc/passwd'):
