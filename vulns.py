@@ -6,7 +6,7 @@ pointsTotal = 0
 
 def gainPoints(points):
 	global pointsTotal
-	
+
 	pointsTotal = points + pointsTotal
 
 	f = open("scoreTMP.txt", "w")
@@ -15,6 +15,12 @@ def gainPoints(points):
 
 def gainVuln(description, pointValue):
 	gainPoints(pointValue)
+
+############################################
+#										   #
+#	Begin Vulnerabilities Configuration    #
+#										   #
+############################################
 
 if checkUpdate():
 	gainPoints(3)
@@ -27,5 +33,11 @@ if userRemoved('administrator'):
 
 if lineInFile('allow-guest=false','/etc/lightdm/lightdm.conf'):
 	print('worked')
+
+############################################
+#										   #
+#	  End Vulnerabilities Configuration    #
+#										   #
+############################################
 
 print('Points: ' + str(pointsTotal))
