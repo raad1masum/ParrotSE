@@ -10,8 +10,12 @@ score = 0
 points = []
 
 
-def lineInFile():
-	pass
+def lineInFile(line, file):
+	with open(file) as f:
+		if line in f.read():
+			return True
+		else:
+			return False
 
 def userAdded(user):
 	global score
