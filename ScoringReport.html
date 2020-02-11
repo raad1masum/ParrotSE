@@ -6,143 +6,13 @@
 
 <title>ParrotSE Scoring Report</title>
 
-<style type="text/css">
+<meta charset="UTF-8">
 
-h1 { text-align: center; }
-
-h2 { text-align: center; }
-
-body {
-
-  font-family: Arial, Verdana, sans-serif;
-
-  font-size: 14px;
-
-  margin: 0;
-
-  padding: 0;
-
-  width: 100%;
-
-  height: 100%;
-
-  background: url('background.jpg');
-
-  background-size: cover;
-
-  background-attachment: fixed;
-
-  background-position: top center;
-
-  background-color: #336699;
-
-}
-
-.red {color: red;}
-
-.green {color: green;}
-
-.blue {color: blue;}
-
-.main {
-
-  margin-top: 10px;
-
-  margin-bottom: 10px;
-
-  margin-left: auto;
-
-  margin-right: auto;
-
-  padding: 0px;
-
-  border-radius: 12px;
-
-  background-color: white;
-
-  width: 900px;
-
-  max-width: 100%;
-
-  min-width: 600px;
-
-  box-shadow: 0px 0px 12px #003366;
-
-}
-
-.text {
-
-  padding: 12px;
-
-  -webkit-touch-callout: none;
-
-  -webkit-user-select: none;
-
-  -khtml-user-select: none;
-
-  -moz-user-select: none;
-
-  -ms-user-select: none;
-
-  user-select: none;
-
-}
-
-.center { text-align: center; }
-
-.binary {
-
-  position: relative;
-
-  overflow: hidden;
-
-}
-
-.binary::before {
-
-  position: absolute;
-
-  top: -75%;
-
-  left: -125%;
-
-  display: block;
-
-  width: 200%;
-
-  height: 150%;
-
-  -webkit-transform: rotate(-45deg);
-
-  -moz-transform: rotate(-45deg);
-
-  -ms-transform: rotate(-45deg);
-
-  transform: rotate(-45deg);
-
-  content: attr(data-binary);
-
-  opacity: 0.16;
-
-  line-height: 2em;
-
-  letter-spacing: 2px;
-
-  color: #369;
-
-  font-size: 10px;
-
-  pointer-events: none;
-
-}
-
-</style>
+<link rel="stylesheet" href="./style.css">
 
 <meta http-equiv="refresh" content="30;url=ScoringReport.html">
 
 </head>
-
-
 
 <body>
 
@@ -150,25 +20,13 @@ body {
 
 <div class="text">
 
-<div class="binary" data-binary="1100 1011 01010000 11111101">
+<div class="binary" data-binary="01010000 01100001 01110010 01110010 01101111 01110100 01010011 01000101">
 
 <p align=center style="width:100%;text-align:center"><img align=middle style="float:middle" src="image001.jpg"></p>
 
 <h1>ParrotSE Linux Scoring Report</h1>
 
-<h2>Report Generated At: 2019/12/08 03:41:00 UTC</h2>
-
-
-
-
-
 <script language="Javascript">
-
-//Array.from(document.querySelectorAll('.binary')).forEach(function(el) {
-
-//  el.dataset.binary = (el.dataset.binary + ' ').repeat(2000);
-
-//});
 
 var bin = document.querySelectorAll('.binary');
 
@@ -180,50 +38,13 @@ var bin = document.querySelectorAll('.binary');
 
 var currentdate = new Date().getTime();
 
-gendate = Date.parse('2019/12/08 03:41:00 UTC');
-
-diff = Math.abs(currentdate - gendate);
-
-if ( gendate > 0 && diff > 1000 * 60 * 5 ) {
-
-  document.write('<span style="color:red"><h2>WARNING: CCS Scoring service may not be running</h2></span>');
-
-}
-
 </script>
 
-<h3 class="center">Approximate Image Running Time: 02:18:18</h3>
-
-<h3 class="center">Approximate Team Running Time: 04:55:51</h3>
-
-<h3 class="center">Current Team ID: <span style="color:green">XXXX-XXXX-XXXX</span></h3>
-
-
-
-
-
 <h2>83 out of 100 points received</h2>
-
-<p><a href="http://54.243.195.23">Click here to view the public scoreboard</a><br>
-<p>
-
-<h3>Connection Status: <span style="color:green">Scoring Data Uploaded Successfully: No Errors Detected</span></h3>
-
-<p>
-
-Internet Connectivity Check: <span style="color:green">OK</span> <br>
-
-CCS Server Connection Status: <span style="color:green">OK</span> <br>
-
-CCS Server Score Upload Status: <span style="color:green">OK</span> <br>
-
-</p>
 
 <h3>0 penalties assessed, for a loss of 0 points:</h3>
 
 <p>
-
-
 
 </p>
 
@@ -271,11 +92,7 @@ SSH allows only public key authentication - 3 pts<br>
 
 </p>
 
-<p align=center style="text-align:center">The CyberPatriot
-
-Competition System is the property of the Air Force Association and the
-
-University of Texas at San Antonio.</p>
+<p align=center style="text-align:center">.</p>
 
 <p align=center style="text-align:center">All rights reserved.</p>
 
@@ -288,3 +105,4 @@ University of Texas at San Antonio.</p>
 </body>
 
 </html>
+
