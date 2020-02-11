@@ -6,7 +6,9 @@ pointsTotal = 0
 
 def gainPoints(points):
 	global pointsTotal
+	
 	pointsTotal = points + pointsTotal
+
 	f = open("scoreTMP.txt", "w")
 	f.write(str(pointsTotal))
 	f.close()
