@@ -24,7 +24,7 @@ if lineInFile('allow-guest=false','/etc/lightdm/lightdm.conf'):
 	print('worked')
 
 f = open("scoreTMP.txt", "w")
-f.write(str(points))
+f.write(str(pointsTotal))
 f.close()
 
 print('Points: ' + str(pointsTotal))
