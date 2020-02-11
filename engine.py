@@ -12,9 +12,12 @@ points = []
 
 def lineInFile(line, file):
 	with open(file) as f:
-		if line in f.read():
-			return True
-		else:
+		try:
+			if line in f.read():
+				return True
+			else:
+				return False
+		except:
 			return False
 
 def userAdded(user):
