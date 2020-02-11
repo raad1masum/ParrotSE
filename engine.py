@@ -10,6 +10,9 @@ score = 0
 points = []
 
 
+def lineInFile():
+	pass
+
 def userAdded(user):
 	global score
 	person = 0
@@ -37,67 +40,18 @@ def userRemoved(user):
 		return False
 
 def groupAdded(group):
-	global score
-	person = 0
-	for line in open('/etc/group'):
-		if group in line:
-			person = 1
-	if person == 1:
-		score = score+1
-		points.append('Added The Group ' +group)
-		return True
-	else:
-		return False
+	with open('/etc/group') as f:
+		if group in f.read():
+			return True
+		else:
+			return False
 
 def groupRemoved(group):
-	global score
-	person = 0
-	for line in open('/etc/group'):
-		if group in line:
-			person = 1
-	if person == 0:
-		score = score+1
-		points.append('Removed The Group ' +group)
-		return True
-	else:
-		return False
-
-def groupAddedTo(user, group):
-	global score
-	p = subprocess.Popen("cat /etc/group | grep " +group, shell=True, stdout=subprocess.PIPE)
-	d = p.stdout.read()
-	p.wait()
-	if user in d:
-		score = score+1
-		points.append('Added ' +user+ ' To The ' +group+ ' Group')
-		return True
-	else:
-		return False
-
-def groupRemovedFrom(user, group):
-	global score
-	p = subprocess.Popen("cat /etc/group | grep " +group, shell=True, stdout=subprocess.PIPE)
-	d = p.stdout.read()
-	p.wait()
-	if user not in d:
-		score = score+1
-		points.append('Removed ' +user+ ' From The ' +group+ ' Group')
-		return True
-	else:
-		return False
-
-def disableGuestAccount(file_path):
-	global score
-	if os.path.isfile(file_path):
-		p = subprocess.Popen("cat "+file_path, shell=True, stdout=subprocess.PIPE)
-		d = p.stdout.read()
-		p.wait()
-	if "allow-guest=false" in d:
-		score = score+1
-		points.append('Disabled Guest Account')
-		return True
-	else:
-		return False
+	with open('/etc/group') as f:
+		if group not in f.read():
+			return True
+		else:
+			return False
 
 def checkUpdate():
 	with open('/etc/apt/sources.list') as f:
@@ -105,19 +59,6 @@ def checkUpdate():
 			return True
 		else:
 			return False
-
-def firewallCheck():
-	global score
-	p = subprocess.Popen("ufw status", shell=True, stdout=subprocess.PIPE)
-	d = p.stdout.read()
-	p.stdout.close()
-	p.wait()
-	if ' active' in d:
-		score = score+1
-		points.append('Enabled The Firewall')
-		return True
-	else:
-		return False
 
 def malwareCheck(file_path):
 	global score
