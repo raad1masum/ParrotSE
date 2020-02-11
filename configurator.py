@@ -8,7 +8,7 @@ def gainPoints(points):
 	global pointsTotal
 	pointsTotal = points + pointsTotal
 
-def vuln(description, pointValue):
+def gainVuln(description, pointValue):
 	gainPoints(pointValue)
 
 if checkUpdate():
