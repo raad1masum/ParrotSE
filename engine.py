@@ -95,8 +95,8 @@ def disableGuestAccount(file_path):
 		p.wait()
 	if "allow-guest=false" in d:
 		score = score+1
-        points.append('Disabled Guest Account')
-    	return True
+		points.append('Disabled Guest Account')
+		return True
     else:
     	return False
 
