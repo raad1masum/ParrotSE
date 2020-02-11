@@ -5,7 +5,7 @@ from engine import *
 pointsTotal = 0
 
 def gainPoints(points):
-	pointsTotal = pointsTotal + points
+	pointsTotal = points + pointsTotal
 
 if checkUpdate():
 	gainPoints(3)
