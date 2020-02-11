@@ -97,8 +97,8 @@ def disableGuestAccount(file_path):
 		score = score+1
 		points.append('Disabled Guest Account')
 		return True
-    else:
-    	return False
+	else:
+		return False
 
 def updates():
 	global score
