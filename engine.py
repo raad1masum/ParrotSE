@@ -101,8 +101,10 @@ def disableGuestAccount(file_path):
 
 def update():
 	with open('/etc/apt/sources.list') as f:
-		if 'http://us.archive.ubuntu.com/ubuntu' in f.read():
-			print("true")
+		if 'http://us.archive.ubuntu.com/ubuntu' and 'http://security.ubuntu.com/ubuntu' in f.read():
+			return True
+		else:
+			return False
 
 def updates():
 	global score
