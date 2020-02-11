@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 import os
-import pwd
 import re
 import socket
 import subprocess
@@ -99,6 +98,11 @@ def disableGuestAccount(file_path):
 		return True
 	else:
 		return False
+
+def update():
+	with open('/etc/apt/sources.list') as f:
+		if 'http://us.archive.ubuntu.com/ubuntu' in f.read():
+			print("true")
 
 def updates():
 	global score
