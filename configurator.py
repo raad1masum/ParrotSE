@@ -10,3 +10,14 @@ def gainPoints(points):
 
 if checkUpdate():
 	gainPoints(3)
+
+if userAdded('administrator'):
+	gainPoints(3)
+
+if userRemoved('administrator'):
+	gainPoints(3)
+
+if disableGuestAccount('/etc/lightdm/lightdm.conf'):
+	print('worked')
+
+print('Points: ' + str(pointsTotal))
