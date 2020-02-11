@@ -18,7 +18,7 @@ def gainVuln(description, pointValue):
 
 ############################################
 #										   #
-#	Begin Vulnerabilities Configuration    #
+#  	  Begin Vulnerability Configuration    #
 #										   #
 ############################################
 
@@ -36,7 +36,7 @@ if lineInFile('allow-guest=false','/etc/lightdm/lightdm.conf'):
 
 ############################################
 #										   #
-#	  End Vulnerabilities Configuration    #
+#	   End Vulnerability Configuration     #
 #										   #
 ############################################
 
