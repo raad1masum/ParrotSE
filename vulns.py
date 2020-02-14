@@ -40,6 +40,9 @@ def generateReport():
 	pointReport = '<h2>' + str(pointsTotal) + ' out of ' + str(possiblePoints) + ' points received</h2>'
 	pointReport2 = '<h3>' + str(vulnTotal) + ' out of ' + str(possibleVulns) + ' scored security issues fixed, for a gain of ' + str(pointsTotal) + 'points:</h3>'
 
+	os.system('> ScoringReport.html')
+	os.system('cat HEADER.html >> ScoringReport.html')
+
 	f = open("ScoringReport.html", "a")
 	f.write(str(pointReport))
 	f.write('<p>')
@@ -47,9 +50,7 @@ def generateReport():
 	f.write(str(pointReport2))
 	f.write('<p>')
 	f.close()
-
-	os.system('> ScoringReport.html')
-	os.system('cat HEADER.html >> ScoringReport.html')
+	
 	os.system('cat reportTMP.txt >> ScoringReport.html')
 	os.system('cat FOOTER.html >> ScoringReport.html')
 
