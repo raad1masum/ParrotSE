@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+from os import *
 from engine import *
 
 pointsTotal = 0
@@ -24,9 +25,10 @@ def gainVuln(description, pointValue):
 	f.close()
 
 def generateReport():
-	subprocess.Popen("cat HEADER.html ScoringReport.html", shell=True, stdout=subprocess.PIPE)
-	subprocess.Popen("cat reportTMP.txt ScoringReport.html", shell=True, stdout=subprocess.PIPE)
-	subprocess.Popen("cat FOOTER.html ScoringReport.html", shell=True, stdout=subprocess.PIPE)
+	os.system('> ScoringReport.html')
+	os.system('cat HEADER.html >> ScoringReport.html')
+	os.system('cat reportTMP.txt >> ScoringReport.html')
+	os.system('cat FOOTER.html >> ScoringReport.html')
 
 ############################################
 #										   #
