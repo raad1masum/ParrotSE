@@ -23,6 +23,11 @@ def gainVuln(description, pointValue):
 	f.write(str(vulnReport))
 	f.close()
 
+def generateReport():
+	subprocess.Popen("cat HEADER.html ScoringReport.html", shell=True, stdout=subprocess.PIPE)
+	subprocess.Popen("cat reportTMP.html ScoringReport.html", shell=True, stdout=subprocess.PIPE)
+	subprocess.Popen("cat FOOTER.html ScoringReport.html", shell=True, stdout=subprocess.PIPE)
+
 ############################################
 #										   #
 #  	  Begin Vulnerability Configuration    #
