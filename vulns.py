@@ -37,7 +37,7 @@ def generateReport():
 ############################################
 
 if checkUpdate():
-	gainPoints(3)
+	gainVuln('Install updates from important security updates', 2)
 
 if userAdded('administrator'):
 	gainPoints(3)
@@ -55,3 +55,4 @@ if lineInFile('allow-guest=false','/etc/lightdm/lightdm.conf'):
 ############################################
 
 print('Points: ' + str(pointsTotal))
+generateReport()
