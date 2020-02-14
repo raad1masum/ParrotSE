@@ -5,6 +5,8 @@ from engine import *
 
 pointsTotal = 0
 
+os.system('> scoreTMP.txt')
+
 def gainPoints(points):
 	global pointsTotal
 
