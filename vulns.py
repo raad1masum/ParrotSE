@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from os import *
+import os
 from engine import *
 
 pointsTotal = 0
