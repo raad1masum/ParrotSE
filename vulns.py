@@ -29,6 +29,12 @@ def vuln(description, pointValue):
 def generateReport():
 	os.system('> ScoringReport.html')
 	os.system('cat HEADER.html >> ScoringReport.html')
+	os.system('cat <h2>83 out of 100 points received</h2> >> ScoringReport.html')
+	os.system('cat <h3>0 penalties assessed, for a loss of 0 points:</h3> >> ScoringReport.html')
+	os.system('cat <p> >> ScoringReport.html')
+	os.system('cat </p> >> ScoringReport.html')
+	os.system('cat <h3>36 out of 42 scored security issues fixed, for a gain of 85 points:</h3> >> ScoringReport.html')
+	os.system('cat <p> >> ScoringReport.html')
 	os.system('cat reportTMP.txt >> ScoringReport.html')
 	os.system('cat FOOTER.html >> ScoringReport.html')
 
