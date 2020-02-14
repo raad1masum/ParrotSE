@@ -31,19 +31,23 @@ def vuln(description, pointValue):
 
 	gainPoints(pointValue)
 	vulnReport = str(description) + ' - ' + str(pointValue) + ' pts<br>'
+	
+	f = open("reportTMP.txt", "a")
+	f.write(str(vulnReport))
+	f.close()
+
+def generateReport():
 	pointReport = '<h2>' + str(pointsTotal) + ' out of ' + str(possiblePoints) + ' points received</h2>'
 	pointReport2 = '<h3>' + str(vulnTotal) + ' out of ' + str(possibleVulns) + ' scored security issues fixed, for a gain of ' + str(pointsTotal) + 'points:</h3>'
 
-	f = open("reportTMP.txt", "a")
+	f = open("ScoringReport.html", "a")
 	f.write(str(pointReport))
 	f.write('<p>')
 	f.write('</p>')
 	f.write(str(pointReport2))
 	f.write('<p>')
-	f.write(str(vulnReport))
 	f.close()
 
-def generateReport():
 	os.system('> ScoringReport.html')
 	os.system('cat HEADER.html >> ScoringReport.html')
 	os.system('cat reportTMP.txt >> ScoringReport.html')
