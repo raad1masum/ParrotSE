@@ -3,7 +3,13 @@
 import os
 from engine import *
 
-pointsTotal = 0
+pointsTotal = 0 # total current points
+
+possiblePoints = 100 # max possible points
+
+vulnTotal = 0 # total current vulns
+
+possibleVulns = 30 # max possible vulns
 
 os.system('> reportTMP.txt')
 
@@ -18,23 +24,28 @@ def gainPoints(points):
 
 def vuln(description, pointValue):
 	global vulnReport
+	global pointReport
+	global vulnTotal
+
+	vulnTotal += 1
 
 	gainPoints(pointValue)
 	vulnReport = str(description) + ' - ' + str(pointValue) + ' pts<br>'
+	pointReport = '<h2>' + pointsTotal + ' out of ' + possiblePoints + ' points received</h2>'
+	pointReport2 = '<h3>' + vulnTotal ' out of ' possibleVulns ' scored security issues fixed, for a gain of ' pointsTotal 'points:</h3>'
 
 	f = open("reportTMP.txt", "a")
+	f.write(str(pointReport))
+	f.write('<p>')
+	f.write('</p>')
+	f.write(str(pointReport2))
+	f.write('<p>')
 	f.write(str(vulnReport))
 	f.close()
 
 def generateReport():
 	os.system('> ScoringReport.html')
 	os.system('cat HEADER.html >> ScoringReport.html')
-	os.system('cat <h2>83 out of 100 points received</h2> >> ScoringReport.html')
-	os.system('cat <h3>0 penalties assessed, for a loss of 0 points:</h3> >> ScoringReport.html')
-	os.system('cat <p> >> ScoringReport.html')
-	os.system('cat </p> >> ScoringReport.html')
-	os.system('cat <h3>36 out of 42 scored security issues fixed, for a gain of 85 points:</h3> >> ScoringReport.html')
-	os.system('cat <p> >> ScoringReport.html')
 	os.system('cat reportTMP.txt >> ScoringReport.html')
 	os.system('cat FOOTER.html >> ScoringReport.html')
 
