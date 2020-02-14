@@ -25,7 +25,7 @@ def gainVuln(description, pointValue):
 
 def generateReport():
 	subprocess.Popen("cat HEADER.html ScoringReport.html", shell=True, stdout=subprocess.PIPE)
-	subprocess.Popen("cat reportTMP.html ScoringReport.html", shell=True, stdout=subprocess.PIPE)
+	subprocess.Popen("cat reportTMP.txt ScoringReport.html", shell=True, stdout=subprocess.PIPE)
 	subprocess.Popen("cat FOOTER.html ScoringReport.html", shell=True, stdout=subprocess.PIPE)
 
 ############################################
