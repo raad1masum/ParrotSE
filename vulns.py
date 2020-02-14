@@ -32,7 +32,7 @@ def vuln(description, pointValue):
 	gainPoints(pointValue)
 	vulnReport = str(description) + ' - ' + str(pointValue) + ' pts<br>'
 	pointReport = '<h2>' + pointsTotal + ' out of ' + possiblePoints + ' points received</h2>'
-	pointReport2 = '<h3>' + vulnTotal ' out of ' possibleVulns ' scored security issues fixed, for a gain of ' pointsTotal 'points:</h3>'
+	pointReport2 = '<h3>' + vulnTotal + ' out of ' + possibleVulns + ' scored security issues fixed, for a gain of ' + pointsTotal + 'points:</h3>'
 
 	f = open("reportTMP.txt", "a")
 	f.write(str(pointReport))
