@@ -19,7 +19,9 @@ def gainVuln(description, pointValue):
 	gainPoints(pointValue)
 	vulnReport = description + ' - ' + pointValue + ' pts<br>'
 
-	return vulnReport
+	f = open("reportTMP.txt", "w")
+	f.write(str(vulnReport))
+	f.close()
 
 ############################################
 #										   #
