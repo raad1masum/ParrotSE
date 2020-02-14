@@ -14,7 +14,12 @@ def gainPoints(points):
 	f.close()
 
 def gainVuln(description, pointValue):
+	global vulnReport
+
 	gainPoints(pointValue)
+	vulnReport = description + ' - ' + pointValue + ' pts<br>'
+
+	return vulnReport
 
 ############################################
 #										   #
