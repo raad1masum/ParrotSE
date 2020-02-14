@@ -40,13 +40,13 @@ if checkUpdate():
 	vuln('Install updates from important security updates', 2)
 
 if userAdded('administrator'):
-	gainPoints(3)
+	vuln('User administrator created', 3)
 
-if userRemoved('administrator'):
-	gainPoints(3)
+if userRemoved('hacker'):
+	vuln('User hacker removed', 3)
 
 if lineInFile('allow-guest=false','/etc/lightdm/lightdm.conf'):
-	print('worked')
+	vuln('Guest Account Disabled', 3)
 
 ############################################
 #										   #
