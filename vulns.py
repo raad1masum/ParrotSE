@@ -14,7 +14,7 @@ def gainPoints(points):
 	f.write(str(pointsTotal))
 	f.close()
 
-def gainVuln(description, pointValue):
+def vuln(description, pointValue):
 	global vulnReport
 
 	gainPoints(pointValue)
@@ -37,7 +37,7 @@ def generateReport():
 ############################################
 
 if checkUpdate():
-	gainVuln('Install updates from important security updates', 2)
+	vuln('Install updates from important security updates', 2)
 
 if userAdded('administrator'):
 	gainPoints(3)
