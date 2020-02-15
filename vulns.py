@@ -54,6 +54,8 @@ def generateReport():
 	os.system('cat reportTMP.txt >> ScoringReport.html')
 	os.system('cat FOOTER.html >> ScoringReport.html')
 
+	os.system("notify-send 'ParrotSE' 'Your Score Has Been Updated'")
+
 ############################################
 #										   #
 #  	  Begin Vulnerability Configuration    #
