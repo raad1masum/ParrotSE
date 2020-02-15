@@ -57,10 +57,12 @@ def generateReport():
 	f = open("scoreOLD.txt", "r")
 	if pointsEarned > int(f.read()):
 		os.system("notify-send 'ParrotSE' 'You Gained Points! :)'")
+		os.system('aplay media/sounds/gain.wav')
 	f.close()
 	f = open("scoreOLD.txt", "r")
 	if pointsEarned < int(f.read()):
 		os.system("notify-send 'ParrotSE' 'You Lost Points! :('")
+		os.system('aplay media/sounds/alarm.wav')
 	f.close()
 	f = open("scoreOLD.txt", "r")
 	if pointsEarned == int(f.read()):
