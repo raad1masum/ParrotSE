@@ -61,6 +61,8 @@ def generateReport():
 		os.system("notify-send 'ParrotSE' 'You Lost Points!'")
 	f.close()
 
+	os.system("cp scoreTMP.txt scoreOLD.txt")
+
 	# os.system("notify-send 'ParrotSE' 'Your Score Has Been Updated'")
 
 ############################################
