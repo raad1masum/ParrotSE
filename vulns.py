@@ -3,31 +3,31 @@
 import os
 from engine import *
 
-pointsTotal = 0 # total current points
+pointsEarned = 0 # total current points
 
-possiblePoints = 100 # max possible points
+pointsPossible = 100 # max possible points
 
-vulnTotal = 0 # total current vulns
+vulnsEarned = 0 # total current vulns
 
-possibleVulns = 30 # max possible vulns
+vulnsPossible = 30 # max possible vulns
 
 os.system('> reportTMP.txt')
 
 def gainPoints(points):
-	global pointsTotal
+	global pointsEarned
 
-	pointsTotal = points + pointsTotal
+	pointsEarned = points + pointsEarned
 
 	f = open("scoreTMP.txt", "w")
-	f.write(str(pointsTotal))
+	f.write(str(pointsEarned))
 	f.close()
 
 def vuln(description, pointValue):
 	global vulnReport
 	global pointReport
-	global vulnTotal
+	global vulnsEarned
 
-	vulnTotal += 1
+	vulnsEarned += 1
 
 	gainPoints(pointValue)
 	vulnReport = str(description) + ' - ' + str(pointValue) + ' pts<br>'
@@ -37,8 +37,8 @@ def vuln(description, pointValue):
 	f.close()
 
 def generateReport():
-	pointReport = '<h2>' + str(pointsTotal) + ' out of ' + str(possiblePoints) + ' points received</h2>'
-	pointReport2 = '<h3>' + str(vulnTotal) + ' out of ' + str(possibleVulns) + ' scored security issues fixed, for a gain of ' + str(pointsTotal) + ' points:</h3>'
+	pointReport = '<h2>' + str(pointsEarned) + ' out of ' + str(pointsPossible) + ' points received</h2>'
+	pointReport2 = '<h3>' + str(vulnsEarned) + ' out of ' + str(possibleVulns) + ' scored security issues fixed, for a gain of ' + str(pointsEarned) + ' points:</h3>'
 
 	os.system('> ScoringReport.html')
 	os.system('cat HEADER.html >> ScoringReport.html')
@@ -53,6 +53,8 @@ def generateReport():
 
 	os.system('cat reportTMP.txt >> ScoringReport.html')
 	os.system('cat FOOTER.html >> ScoringReport.html')
+
+	if pointsEarned 
 
 	os.system("notify-send 'ParrotSE' 'Your Score Has Been Updated'")
 
@@ -80,5 +82,5 @@ if lineInFile('allow-guest=false','/etc/lightdm/lightdm.conf'):
 #										   #
 ############################################
 
-print('Points: ' + str(pointsTotal))
+print('Points: ' + str(pointsEarned))
 generateReport()
