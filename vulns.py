@@ -64,7 +64,7 @@ def generateReport():
 	f.close()
 	f = open("scoreOLD.txt", "r")
 	if pointsEarned == int(f.read()):
-		os.system("notify-send 'ParrotSE' 'Your Points Did Not Change :|'")
+		os.system("notify-send 'ParrotSE' 'Your Points Did Not Change. :|'")
 	f.close()
 
 	os.system("cp scoreTMP.txt scoreOLD.txt")
