@@ -56,16 +56,18 @@ def generateReport():
 
 	f = open("scoreOLD.txt", "r")
 	if pointsEarned > int(f.read()):
-		os.system("notify-send 'ParrotSE' 'You Gained Points!'")
+		os.system("notify-send 'ParrotSE' 'You Gained Points! :)'")
 	f.close()
 	f = open("scoreOLD.txt", "r")
 	if pointsEarned < int(f.read()):
-		os.system("notify-send 'ParrotSE' 'You Lost Points!'")
+		os.system("notify-send 'ParrotSE' 'You Lost Points! :('")
+	f.close()
+	f = open("scoreOLD.txt", "r")
+	if pointsEarned == int(f.read()):
+		os.system("notify-send 'ParrotSE' 'Your Points Did Not Change :|'")
 	f.close()
 
 	os.system("cp scoreTMP.txt scoreOLD.txt")
-
-	# os.system("notify-send 'ParrotSE' 'Your Score Has Been Updated'")
 
 ############################################
 #										   #
