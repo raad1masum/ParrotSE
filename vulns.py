@@ -54,9 +54,14 @@ def generateReport():
 	os.system('cat reportTMP.txt >> ScoringReport.html')
 	os.system('cat FOOTER.html >> ScoringReport.html')
 
-	if pointsEarned 
-
-	os.system("notify-send 'ParrotSE' 'Your Score Has Been Updated'")
+	f = open("scoreOLD.txt", "r")
+	if pointsEarned > f.read():
+		os.system("notify-send 'ParrotSE' 'You Gained Points!'")
+	if pointsEarned < f.read():
+		os.system("notify-send 'ParrotSE' 'You Lost Points!'")
+	f.close()
+	
+	# os.system("notify-send 'ParrotSE' 'Your Score Has Been Updated'")
 
 ############################################
 #										   #
