@@ -57,7 +57,9 @@ def generateReport():
 	f = open("scoreOLD.txt", "r")
 	if pointsEarned > int(f.read()):
 		os.system("notify-send 'ParrotSE' 'You Gained Points!'")
-	elif pointsEarned < int(f.read()):
+	f.close()
+	f = open("scoreOLD.txt", "r")
+	if pointsEarned < int(f.read()):
 		os.system("notify-send 'ParrotSE' 'You Lost Points!'")
 	f.close()
 
