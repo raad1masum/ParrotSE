@@ -38,7 +38,7 @@ def vuln(description, pointValue):
 
 def generateReport():
 	pointReport = '<h2>' + str(pointsEarned) + ' out of ' + str(pointsPossible) + ' points received</h2>'
-	pointReport2 = '<h3>' + str(vulnsEarned) + ' out of ' + str(possibleVulns) + ' scored security issues fixed, for a gain of ' + str(pointsEarned) + ' points:</h3>'
+	pointReport2 = '<h3>' + str(vulnsEarned) + ' out of ' + str(vulnsPossible) + ' scored security issues fixed, for a gain of ' + str(pointsEarned) + ' points:</h3>'
 
 	os.system('> ScoringReport.html')
 	os.system('cat HEADER.html >> ScoringReport.html')
