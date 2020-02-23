@@ -78,6 +78,8 @@ def generateReport():
 #  	  Begin Vulnerability Configuration    #
 #										   #
 ############################################
+'''
+EXAMPLES:
 
 if checkUpdate():
 	vuln('Install updates from important security updates', 2)
@@ -90,6 +92,8 @@ if userRemoved('hacker'):
 
 if lineInFile('allow-guest=false','/etc/lightdm/lightdm.conf'):
 	vuln('Guest Account Disabled', 3)
+'''
+
 
 ############################################
 #										   #
