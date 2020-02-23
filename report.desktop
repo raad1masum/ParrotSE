@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=ParrotSE Scoring Report
+Type=Application
+Exec=x-www-browser "file:///opt/ParrotSE/ScoringReport.html"
+Icon=/opt/ParrotSE/media/parrot.jpg
+StartupNotify=true
