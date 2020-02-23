@@ -2,5 +2,5 @@
 Name=ParrotSE Scoring Report
 Type=Application
 Exec=x-www-browser "file:///opt/ParrotSE/ScoringReport.html"
-Icon=/opt/ParrotSE/media/parrot.jpg
+Icon=/opt/ParrotSE/media/img/parrot.jpg
 StartupNotify=true
